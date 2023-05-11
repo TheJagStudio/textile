@@ -26,10 +26,7 @@ The YOLOv8 model used in this application was trained on the cloth dataset. The 
 
 Results
 Here are some sample images from the training and validation batches, as well as a sample result from the application:
-
-runs/segment/yolov8n_custom/result.png: Result
-runs/segment/yolov8n_custom/val_batch0_pred.jpg: Sample Predictions
-
+[runs/segment/yolov8n_custom/result.png](https://raw.githubusercontent.com/TheJagStudio/textile/b06ce15ac3bdc21899b3d8d3ccdef0efd35aa06e/runs/segment/yolov8n_custom/results.png)
 
 
 License
