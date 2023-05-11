@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="/static/tailwind.js"></script>
+</head>
+<body>
+    <form action="/demo" enctype="multipart/form-data" method="post" class="m-5">
+        <div class="relative group h-48 w-full bg-purple-700 rounded-xl border-2 border-black overflow-hidden flex justify-center items-center shadow-xl">
+            <input onchange="imageDisplay()" id="image" name="image" type="file" class="absolute top-0 left-0 opacity-0 h-full w-full"/>
+            <h1 id="dragAndDrop" class="text-xl font-bold text-white opacity-75 group-hover:opacity-100 transition-all ">Drag and Drop Image</h1>
+            <img id="imagePreview" class="h-32 w-auto my-3 rounded-xl object-contain hidden" src="" alt="">
+        </div>
+        <button type="submit" class="bg-purple-700 p-2 rounded-lg border-2 border-black mt-5 text-white shadow-lg">Submit</button>
+    </form>
+    <script>
+        function imageDisplay(){
+            if (!document.getElementById("dragAndDrop").classList.contains("hidden")){
+                document.getElementById("dragAndDrop").classList.add("hidden");
+            }
+            document.getElementById("imagePreview").classList.remove("hidden");
+            var image = document.getElementById("image");
+            var imagePreview = document.getElementById("imagePreview");
+            imagePreview.src = URL.createObjectURL(image.files[0]);
+        }
+    </script>
+</body>
+</html>
